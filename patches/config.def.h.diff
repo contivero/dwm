@@ -1,0 +1,27 @@
+Useless gaps config.def.h patch for dwm 6.0
+
+--- config.def.h.orig	2014-05-04 02:11:15.095407190 -0300
++++ config.def.h	2014-05-04 03:16:30.730655617 -0300
+@@ -8,6 +8,7 @@
+ static const char selbordercolor[]  = "#005577";
+ static const char selbgcolor[]      = "#005577";
+ static const char selfgcolor[]      = "#eeeeee";
++static const unsigned int gappx     = 6;        /* pixel size of gaps */
+ static const unsigned int borderpx  = 1;        /* border pixel of windows */
+ static const unsigned int snap      = 32;       /* snap pixel */
+ static const Bool showbar           = True;     /* False means no bar */
+@@ -28,10 +29,10 @@
+ static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
+ 
+ static const Layout layouts[] = {
+-	/* symbol     arrange function */
+-	{ "[]=",      tile },    /* first entry is default */
+-	{ "><>",      NULL },    /* no layout function means floating behavior */
+-	{ "[M]",      monocle },
++	/* symbol   addgap  arrange function */
++	{ "[]=",    True,       tile },    /* first entry is default */
++	{ "><>",    False,      NULL },    /* no layout function means floating behavior */
++	{ "[M]",    False,      monocle },
+ };
+ 
+ /* key definitions */
